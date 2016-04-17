@@ -6,5 +6,4 @@ before_install:
 
 script:
   - jdk_switcher use openjdk8
-  - gradle --version
-  - gradle build --stacktrace --info
+  - gradle build
