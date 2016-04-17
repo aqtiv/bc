@@ -2,6 +2,9 @@ sudo: required
 dist: trusty
 
 before_install:
+  - cat /etc/hosts
+  - sudo sed -i 's/^127\.0\.0\.1\(.*\)/127.0.0.1 test-machine \1/g' /etc/hosts
+  - cat /etc/hosts
   - sudo hostname test-machine
   - sudo apt-get install -y openjdk-7-jdk gradle haveged
 
