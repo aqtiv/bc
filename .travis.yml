@@ -10,4 +10,4 @@ before_script:
 
 script:
   - jdk_switcher use openjdk8
-  - gradle build
+  - travis_wait gradle build
