@@ -4,9 +4,9 @@ dist: trusty
 before_install:
   # Work around OpenJDK bug
   - cat /etc/hosts
-  - sudo sed -i 's/^\(127\.0\.0\.1\|::1\)\(.*\)/\1 test-machine\2/g' /etc/hosts
+  - sudo sed -i 's/^\(127\.0\.0\.1\|::1\) \(.*\)/\1 testbox \2/g' /etc/hosts
   - cat /etc/hosts
-  - sudo hostname test-machine
+  - sudo hostname testbox
   # Haveged to speed up random number generation on headless machine.
   - sudo apt-get install -y openjdk-7-jdk gradle haveged
 
