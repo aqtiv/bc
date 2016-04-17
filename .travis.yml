@@ -2,12 +2,11 @@ sudo: required
 dist: trusty
 
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y openjdk-8-jdk gradle
+  - sudo apt-get install -y openjdk-8-jdk gradle haveged
 
 before_script: 
+  - jdk_switcher use openjdk8
   - gradle --version
 
 script:
-  - jdk_switcher use openjdk8
   - gradle build --stacktrace --info
